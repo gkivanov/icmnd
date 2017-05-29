@@ -36,9 +36,7 @@ def load(paths, shape):
 class ICMND(BaseDataset):
 
   def __init__(self, data_dir, shape, batch_size, dtype=dtypes.float32, reshape=True):
-    BaseDataset.__init__(self, batch_size, dtype, reshape)
-
-    self._shape = shape
+    BaseDataset.__init__(self, shape, batch_size, dtype, reshape)
 
     # Indices for training and validation set progress tracking
     self._train_index = 0

@@ -14,7 +14,7 @@ from tensorflow.python.ops import data_flow_ops
 class BaseDataset:
   __metaclass__ = ABCMeta
 
-  def __init__(self, batch_size, reshape=True, dtype=dtypes.float32):
+  def __init__(self, shape, batch_size, reshape=True, dtype=dtypes.float32):
     """Construct a DataSet.
     `dtype` can be either `uint8` to leave the input as `[0, 255]`,
     or `float32` to rescale into `[0, 1]`.
@@ -22,6 +22,7 @@ class BaseDataset:
     dtype = dtypes.as_dtype(dtype).base_dtype
     if dtype not in (dtypes.uint8, dtypes.float32):
       raise TypeError('Invalid image dtype %r, expected uint8 or float32' % dtype)
+    self._shape = shape
     self._batch_size = batch_size
     self._dtype = dtype
     self._reshape = reshape
@@ -68,14 +69,14 @@ class BaseDataset:
 
     return queue
 
-  def train_queue(self, shape, threads, capacity=10):
+  def train_queue(self, threads, capacity=10):
     return self._queue(
-      self.next_train_batch, shape, 'training',
+      self.next_train_batch, self._shape, 'training',
       threads=threads, capacity=capacity
     )
 
-  def validate_queue(self, shape, threads, capacity=10):
+  def validate_queue(self, threads, capacity=10):
     return self._queue(
-      self.next_validate_batch, shape, 'validation',
+      self.next_validate_batch, self._shape, 'validation',
       threads=threads, capacity=capacity
     )
