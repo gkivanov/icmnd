@@ -6,8 +6,8 @@ It is a good dataset for researchers and Machine Learning enthusiasts who want t
 
 Two files are available:
 
-- [icmnd.tar_gz](https://dgmmn.blob.core.windows.net/publicds/icmnd.tar.gz) - The full dataset including both the training and testing samples.
-- [icmnd_10percent.tar.gz](https://dgmmn.blob.core.windows.net/publicds/icmnd_10percent.tar.gz) - A small subset of the full dataset including 10% of all training and testing samples.
+- [icmnd.tar.gz](https://dgmmn.blob.core.windows.net/publicds/icmnd.tar.gz) (9.2 GiB) - The full dataset including both the training and testing samples.
+- [icmnd_10percent.tar.gz](https://dgmmn.blob.core.windows.net/publicds/icmnd_10percent.tar.gz) (1.04 GiB) - A small subset of the full dataset including ~10% of all training and testing samples.
 
 We have also provided the necessary classes to operate the dataset after it has been saved to disk. The implemenation is compatible with the framework Tensorflow, version 1.1.
 
