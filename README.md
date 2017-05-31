@@ -25,6 +25,13 @@ wget https://dgmmn.blob.core.windows.net/publicds/icmnd_10percent.tar.gz
 tar -zxvf icmnd_10percent.tar.gz
 ```
 
+### Installing necessary packages
+
+```bash
+pip install --user tensorflow[-gpu]
+pip install --user numpy scipy pillow
+```
+
 ### Usage
 
 ```python
