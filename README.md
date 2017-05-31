@@ -25,14 +25,12 @@ tar -zxvf icmnd_10percent.tar.gz
 
 ### Usage
 
-**Note:** You might need to change the DATA_DIR variable below to reflect where you saved the dataset. 
-
 ```python
 
 import tensorflow as tf
 from icmnd.icmnd import ICMND
 
-DATA_DIR   = "~/icmnd"
+DATA_DIR   = # the location of the dataset e.g. "~/icmnd" or "~/icmnd_10percent"
 IMG_SHAPE  = (200, 200)
 BATCH_SIZE = 256
 EPOCHS     = 100
