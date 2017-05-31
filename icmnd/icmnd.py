@@ -11,6 +11,7 @@ import glob
 import numpy as np
 
 from PIL import Image
+from scipy.misc import imresize
 from tensorflow.python.framework import dtypes
 
 from .base import BaseDataset
@@ -29,7 +30,10 @@ def load(paths, shape):
   batch_size = len(paths)
   batch_imgs = np.empty((batch_size, shape[0] * shape[1]))
   for idx, p in enumerate(paths):
-    batch_imgs[idx] = np.asarray(Image.open(p), np.uint8).flatten()
+    loaded = np.asarray(Image.open(p), np.uint8)
+    if loaded.shape != shape:
+      loaded = imresize(loaded, shape)
+    batch_imgs[idx] = loaded.flatten()
   return batch_imgs
 
 
