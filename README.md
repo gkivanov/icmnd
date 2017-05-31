@@ -57,6 +57,9 @@ sess = tf.InteractiveSession()
 coord   = tf.train.Coordinator()
 threads = tf.train.start_queue_runners(sess=sess, coord=coord)
 
+# Initialize the weights of the model
+sess.run(tf.global_variables_initializer())
+
 # Run the Graph
 try:
   for epoch in range(EPOCHS):
