@@ -4,6 +4,8 @@ The ICMND dataset of music bars in notation form, has a training set of 1,747,77
 
 It is a good dataset for researchers and Machine Learning enthusiasts who want to try learning techniques, pattern recognition methods and generative models on a new dataset with a large number of features and interesting correlations between those.
 
+**Note:** Due to the vastness of the dataset we couldn't remove all corrupt music bars, but those outliers are only around 3%.
+
 Two files are available:
 
 - [icmnd.tar.gz](https://dgmmn.blob.core.windows.net/publicds/icmnd.tar.gz) (9.2 GiB) - The full dataset including both the training and testing samples.
